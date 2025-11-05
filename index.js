@@ -14,4 +14,9 @@ app.get('/io', async (req, reply) => {
   return { status: 'ok' }
 })
 
-app.listen({ port: process.env.PORT || 3000, host: '0.0.0.0' })
+app.listen({ port: 80, host: '0.0.0.0' }, (err, address) => {
+  if (err) {
+    console.error(err)
+    process.exit(1)
+  }
+})
